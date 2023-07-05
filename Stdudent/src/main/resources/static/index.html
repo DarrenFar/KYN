@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Demo</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="/" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+  </style>
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Login with Facebook</h1>
+
+    <div class="unauthenticated">
+      <a href="/login" class="btn btn-primary">Login With Facebook</a>
+    </div>
+
+    <div class="authenticated" style="display: none">
+      <p>Logged in as: <span id="user"></span></p>
+      <p>
+        You have logged in successfully.
+        <a href="http://localhost:3000/profile">Click here to proceed</a>
+      </p>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $.get("/user", function(data) {
+      $("#user").html(data.userAuthentication.details.name);
+      $(".unauthenticated").hide();
+      $(".authenticated").show();
+    });
+  </script>
+</body>
+
+</html>
