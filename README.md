@@ -4,5 +4,5 @@ landing page
 admin page 
 ![portfolio-11](https://github.com/DarrenFar/KYN/assets/136566606/96e79005-56f6-4618-9aff-022205d4001e)
 
-Login Page
+Login Page with Google and facebook login function
 ![portfolio-12](https://github.com/DarrenFar/KYN/assets/136566606/14170125-a3a8-485d-b1af-8d43fd91cbdc)
